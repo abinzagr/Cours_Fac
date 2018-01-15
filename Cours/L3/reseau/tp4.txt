@@ -1,0 +1,70 @@
+1.une premirere utilisation de telnet
+
+telnet time.nist.gov daytime
+description: donne l'heure et la date plus le fuseau
+
+
+2.Protocole HTTP
+
+2.1 Methode HEAD 
+
+www.emu-u.bordeaux.fr
+reponse :
+HTTP/1.1 408 Request Time-out
+Date: Thu, 03 Nov 2016 14:04:58 GMT
+Server: Apache/2.2.22 (Debian)
+Vary: Accept-Encoding
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+www.labri.fr
+reponse:
+HTTP/1.1 200 OK
+Date: Thu, 03 Nov 2016 14:08:42 GMT
+Server: Apache
+Expires: Tue, 01 Jan 2002 00:00:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Set-Cookie: userlang=fr; path=/
+Vary: Authorization
+Accept-Ranges: none
+Connection: close
+Content-Type: text/html; charset=ISO-8859-1;
+
+
+www.inria.fr
+reponse:
+HTTP/1.1 301 Moved Permanently
+Date: Thu, 03 Nov 2016 14:07:12 GMT
+Server: Apache
+Location: https://www.inria.fr/
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+2.2 Classe de reponse
+
+200 ok : Demande reussie
+400 mauvaise requetes : erreur client(La requête n’a pas pu être comprise par le serveur à cause d’une syntaxe mal formée. Le client ne doit pas répéter la demande sans modifications.)
+300 choix miltiples : redirection[La ressource correspond à plusieurs éléments d’un ensemble de représentations, chacun ayant sa propre localisation spécifique. Le serveur doit retourner des informations permettant au client de choisir l’élément approprié (cas par exemple d’un document en plusieurs langues)]
+
+2.3 Methode GET simple et entetes
+
+wget --server-response http://dept-info.labri.fr/~thibault/test-redir
+oui on obtient la meme chose.
+
+3. Utilisation d'un proxy
+Un proxy, c'est donc un mandataire, un intermédaire.
+
+Sur Internet, il existe différents types de proxy. Les plus courants sont les proxy HTTP. Ils supportent les protocoles HTTP et FTP.
+
+avec proxy : existence d'un intermediare pour la demande/reponse d'une requete
+sans proxy accès direct a la page retourne la reponse de la requete.
+
+4.Vos traces
+accès direct sans proxy @ip connu
+proxy de l'université @ip non connu
+mon proxy @ip non connu
+
+5.Cookie et formulaire
+
+
+

@@ -1,0 +1,62 @@
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Bus {
+		public static void main(String[] args) {
+			ServerSocket socketserver  ;
+			Socket socketduserveur ;
+			int []tabclient={0,0,0,0,0};
+			while(true){
+				try {
+
+					socketserver = new ServerSocket(Integer.parseInt(args[0]));
+					socketduserveur = socketserver.accept(); 
+					InputStream in=socketduserveur.getInputStream();
+					OutputStream out=socketduserveur.getOutputStream();
+					int choix=in.read();
+					int numclient =in.read();
+					if(choix!=0){
+						if(numclient<=tabclient.length && numclient>=0){
+							if(tabclient[numclient]==0){
+								System.out.println("client "+numclient+" connecté!");
+								tabclient[numclient]=1;
+								out.write(1);
+							}
+							else{
+								System.out.println("connexion réfusée client deja rentré");
+								out.write(0);
+							}
+						}
+						else{
+							System.out.println("connexion réfusée numero client incorrect");
+						}
+					}
+					else{
+						if(numclient<=tabclient.length && numclient>=0){
+							if(tabclient[numclient]==1){
+								System.out.println("client "+numclient+" deconnecté!");
+								out.write(1);
+							}
+							else{
+								System.out.println("deconnexion réfusée client deja sorti");
+								out.write(0);
+							}
+						}
+						else{
+							System.out.println("deconnexion réfusée numero client incorrect");
+						}
+					}
+
+					socketserver.close();
+					socketduserveur.close();
+
+				}catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+}

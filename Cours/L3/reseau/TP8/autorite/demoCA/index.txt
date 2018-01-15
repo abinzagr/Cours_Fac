@@ -1,0 +1,3 @@
+V	171201132345Z		00	unknown	/C=AU/ST=Some-State/O=Internet Widgits Pty Ltd/CN=pitikey
+V	171201135834Z		01	unknown	/C=AU/ST=Some-State/O=Internet Widgits Pty Ltd/CN=keyser
+V	171201143102Z		02	unknown	/C=AU/ST=Some-State/O=Internet Widgits Pty Ltd/CN=junior

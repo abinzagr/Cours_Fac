@@ -1,0 +1,19 @@
+total 88
+drwxr-xr-x 2 abbinzagr grp30001 4096 nov.  12 17:10 .
+drwxr-xr-x 6 abbinzagr grp30001 4096 oct.  26 08:15 ..
+-rw-r--r-- 1 abbinzagr grp30001    0 nov.  12 17:10 bin.txt
+-rw-r--r-- 1 abbinzagr grp30001 1547 oct.  19 10:56 exsupp.c
+-rwxr-xr-x 1 abbinzagr grp30001 7824 oct.  12 09:08 faux_pipe
+-rw-r--r-- 1 abbinzagr grp30001  607 oct.  12 09:19 faux-pipe.c
+-rw-r--r-- 1 abbinzagr grp30001  739 oct.  12 10:46 fichier
+-rw-r--r-- 1 abbinzagr grp30001  125 nov.  12 16:57 file.txt
+-rwxr-xr-x 1 abbinzagr grp30001 7920 oct.  12 10:45 log
+-rw-r--r-- 1 abbinzagr grp30001  495 oct.  12 10:45 log.c
+-rw-r--r-- 1 abbinzagr grp30001    0 nov.  12 17:09 ls
+-rwxr-xr-x 1 abbinzagr grp30001 7976 oct.  19 10:43 supp
+-rwxr-xr-x 1 abbinzagr grp30001 7456 oct.  12 10:09 taille_buffer
+-rw-r--r-- 1 abbinzagr grp30001  418 oct.  12 10:09 taille-buffer.c
+-rwxr-xr-x 1 abbinzagr grp30001 7200 oct.  12 10:55 tee
+-rw-r--r-- 1 abbinzagr grp30001  297 oct.  12 10:57 tee.c
+-rwxr-xr-x 1 abbinzagr grp30001 7648 oct.  12 09:34 vrai_pipe
+-rw-r--r-- 1 abbinzagr grp30001  460 oct.  19 09:02 vrai-pipe.c

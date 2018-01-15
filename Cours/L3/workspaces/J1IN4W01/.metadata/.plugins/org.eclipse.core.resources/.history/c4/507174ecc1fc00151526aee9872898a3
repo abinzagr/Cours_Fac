@@ -1,0 +1,41 @@
+
+import ij.process.ImageProcessor;
+import ij.process.LUT;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class Load_Lut {
+  public void run(ImageProcessor ip) {
+    byte[] r = new byte[256];
+    byte[] g = new byte[256];
+    byte[] b = new byte[256];
+    
+    File file = new File("lut.data");
+    FileInputStream fis = null;
+
+    try {
+      fis = new FileInputStream(file);
+      
+      for(int k = 0; k < 256; ++k)
+        r[k] = (byte)fis.read();
+      
+      for(int k = 0; k < 256; ++k)
+        g[k] = (byte)fis.read();
+      
+      for(int k = 0; k < 256; ++k)
+        b[k] = (byte)fis.read();
+      
+      fis.close();
+    }
+    catch (IOException e){
+      //System.err(e);
+    }
+    
+    LUT l = new LUT(r,g,b);
+    ip.setLut(l);
+    
+  }
+
+}

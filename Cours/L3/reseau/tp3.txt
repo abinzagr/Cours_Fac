@@ -1,0 +1,55 @@
+1. Analyse : wireshark
+@ip : 193.50.110.76
+@passerelle par defaut : 193.5.110.254
+
+1.1. Un premier ping
+
+@IpSrc: 193.50.110.76
+@IpDest: 193.50.111.150
+
+port src : 57665
+port dest: 53   
+
+ICMP : 1 ->2  
+
+@ du serveur DNS = @IpDest
+numero port DNS = port dest
+nom du domaine : google.fr
+
+ICMP : 1 <-2
+answers : google.**
+
+on a exactement la meme @ MAC mais pas la meme @ IP parceque on s'interesse(dialoguer) à un domaine particulier du domaine google.fr et cahque domaine possede sa propre @MAC.
+("redirection"=passerelle)
+
+1.2. deuxieme ping
+changement des @ip vu que l'on souhaite discuter avec de nouveau domaine dont on ignore leurs adresses ip
+
+1.3 Une page web
+la couleur rouge correspond a la demande de la requete HTTP("GET") et la couleur bleue a la reponse("200 ok") 
+full request url:http://dept-info.labri.fr/~thibault/
+
+1.4.UNe deuxieme page web
+On observe evidement une 3em demande HTTP parceque l'utilisateur à demander à consulter l'url http://dept-info.labri.fr/~thibaults/enseignements.html.fr
+une reponse HTTP est justement produit à l'issue de la requete
+
+1.5 CUPS
+l'imprimante s'appelle HP DesKJet 895C...
+@ip193.50.110.106
+
+1.6 Envoyer un mail
+effectivement après 2 echanges precisement.
+
+1.7 lire des mails
+mot de passe de messagerie: foobar
+
+1.8 Connexion SSH
+rien a lire tout est chiffrés
+
+2 Génération : scapy
+
+2.1 Observation
+easy recopier le code et executer ligne par ligne
+
+2.2 UDP echo
+meme chose ajout juste de la donnée changement eventuel du port 7 pour un udp echo

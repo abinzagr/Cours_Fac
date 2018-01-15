@@ -1,0 +1,12 @@
+/*********************************************
+ * OPL 12.6.3.0 Data
+ * Author: abbinzagr
+ * Creation Date: 8 nov. 2017 at 10:29:32
+ *********************************************/
+
+ int obj_gas = 40;
+ int obj_chloride = 50;
+ int cst_ct1 = 50;
+ int cst_ct2 = 180;
+ int cst_ct3 = 40;
+ 

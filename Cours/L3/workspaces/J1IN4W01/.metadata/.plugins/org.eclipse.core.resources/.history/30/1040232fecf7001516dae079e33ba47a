@@ -1,0 +1,73 @@
+
+import java.io.File;
+
+import javax.swing.JFileChooser;
+
+import ij.IJ;
+import ij.ImagePlus;
+import ij.Prefs;
+import ij.gui.NewImage;
+import ij.io.OpenDialog;
+import ij.io.Opener;
+import ij.plugin.PlugIn;
+import ij.process.ImageProcessor;
+
+
+public class Detection_Mouvement implements PlugIn {
+  
+  ImagePlus im1;
+  ImagePlus im2;
+
+  public void openFiles()
+  {
+    JFileChooser fc = new JFileChooser();
+    fc.setMultiSelectionEnabled(true);
+
+    File dir = null;
+    String sdir = OpenDialog.getDefaultDirectory();
+    if (sdir!=null) dir = new File(sdir);
+    if (dir!=null) fc.setCurrentDirectory(dir);
+    int returnVal = fc.showOpenDialog(IJ.getInstance());
+    if (returnVal!=JFileChooser.APPROVE_OPTION)
+      return;
+
+    File[] files = fc.getSelectedFiles();
+    if ( files.length != 2 ) return;
+    String folderPath = fc.getCurrentDirectory().getPath()+Prefs.getFileSeparator();
+    dir = fc.getCurrentDirectory();
+
+    Opener opener = new Opener();
+    im1 = opener.openImage(folderPath, files[0].getName());
+    im2 = opener.openImage(folderPath, files[1].getName());
+  }
+  
+  public void differenceInterImages( ImagePlus im1, ImagePlus im2, ImagePlus imR, ImagePlus imV, ImagePlus imB )
+  {
+    ...
+  }
+  
+  public void erodeEtDilateImage( ImagePlus im )
+  {
+    ...
+  }
+  
+  public void fusion( ImagePlus imR, ImagePlus imV, ImagePlus imB, ImagePlus imRes )
+  {
+    ...
+  }
+  
+  public void seuillage(ImagePlus im, int minValue)
+  {
+    ...
+  }
+
+  @Override
+  public void run(String arg0) {
+    openFiles();
+    
+    if ( im1 == null || im2 == null ) return;
+    
+    ...
+  }
+
+}

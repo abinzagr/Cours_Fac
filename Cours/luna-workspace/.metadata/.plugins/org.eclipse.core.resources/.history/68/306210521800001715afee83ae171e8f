@@ -1,0 +1,5 @@
+
+public class Capteur {
+	String sender_class;
+	String sender_name;
+}

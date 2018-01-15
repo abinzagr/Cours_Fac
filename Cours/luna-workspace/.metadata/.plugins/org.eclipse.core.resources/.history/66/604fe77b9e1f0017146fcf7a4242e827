@@ -1,0 +1,36 @@
+import javax.json.JsonObject;
+
+
+public class SenderbyCapteur {
+	int sender_id;
+	int msg_id;
+	JsonObject []tabmsgId;
+	
+	public SenderbyCapteur(int sender_id, int msg_id, JsonObject[] tabmsgId) {
+		super();
+		this.sender_id = sender_id;
+		this.msg_id = msg_id;
+		this.tabmsgId = tabmsgId;
+	}
+	
+	public int getSender_id() {
+		return sender_id;
+	}
+	public void setSender_id(int sender_id) {
+		this.sender_id = sender_id;
+	}
+	public int getMsg_id() {
+		return msg_id;
+	}
+	public void setMsg_id(int msg_id) {
+		this.msg_id = msg_id;
+	}
+	public JsonObject[] getTabmsgId() {
+		return tabmsgId;
+	}
+	public void setTabmsgId(JsonObject[] tabmsgId) {
+		this.tabmsgId = tabmsgId;
+	}
+	
+	
+}

@@ -1,0 +1,26 @@
+
+public class Gps extends Capteur {
+
+	private double latitude;
+	private double longitude;
+	
+	public Gps(){
+		super("Gps", "default_Gps");
+		this.latitude = 0;
+		this.longitude = 0;
+	}
+	
+	public Gps(String sender_class, String sender_name, double latitude,
+			double longitude) {
+		super(sender_class, sender_name);
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+
+
+	public Gps(String sender_class, String sender_name) {
+		super(sender_class, sender_name);
+		// TODO Auto-generated constructor stub
+	}
+
+}

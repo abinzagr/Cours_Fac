@@ -1,0 +1,45 @@
+import ij.IJ;
+import ij.ImagePlus;
+import ij.gui.GenericDialog;
+import ij.gui.NewImage;
+import ij.plugin.filter.PlugInFilter;
+import ij.process.ImageProcessor;
+
+public class ImagePixelisé15_30 implements PlugInFilter {
+  
+  public void run(ImageProcessor iI){
+    GenericDialog gd = new GenericDialog( "Taille de l'image résultat",
+        IJ.getInstance() );
+    gd.addSlider( "nbl de blocs en largeur", 0.0, 20.0, 2.0 );
+    gd.addSlider( "la taille nxn de chaque bloc", 0.0, 30.0, 2.0 );
+    gd.showDialog() ;
+    if ( gd.wasCanceled() ) {
+      IJ.error( "PlugIn cancelled" );
+      return;
+    }
+    double nbl = (double) gd.getNextNumber();
+    double taille = (double) gd.getNextNumber();
+    if (nbl == 0 || taille == 0)
+      return ;
+    int w = iI.getWidth();
+    int h = iI.getHeight();
+    ImagePlus imR = NewImage.createRGBImage ("image resultat pixelisée", (int)(w*nbl), (int)(h*taille), 1, NewImage.FILL_BLACK);
+    ImageProcessor iR = imR.getProcessor();
+    for(int y = 0 ; y < h ; y++)
+      for(int x = 0 ; x < w ; x++) {
+        int tmp = iI.getPixel(x, y) ;
+        for (int i = 0 ; i < nbl ; i++)
+          for (int j = 0 ; j < taille ; j++)
+            iR.putPixel(x + w*i, (int)y + h*j, tmp) ;
+      }
+    imR.show();
+  }
+  
+  
+  
+  
+  
+  public int setup(String arg, ImagePlus imp) {
+    return DOES_RGB;
+  }  
+}

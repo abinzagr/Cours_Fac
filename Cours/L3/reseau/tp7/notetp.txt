@@ -1,0 +1,23 @@
+port 22: connexion en ssh
+
+creation du clé: ssh-keygen -t rsa
+
+transfert de ma clé sur le serveur : ssh abbinzagr@machine "cat >> ~/.ssh/authorized_keys" < ~/.ssh/id_rsa.pub
+
+droit linux sur ma clé:
+
+sur le serveur distant : [chmod 600 ~/.ssh/id_rsa]donne tous les droits à l'utilisateur detenant la clé
+[chmod 644 ~/.ssh/id_rsa]: besoin emande a l'utilisateur de s'authentifier
+
+sur ma machine local :
+[chmod 600 ~/.ssh/id_rsa]: accés sur n'importe quel machine distant sans restriction
+[chmod 644 ~/.ssh/id_rsa]: restriction demande d'authetification pour se connecter à une machine distant
+
+connexion impossible en ssh d'une machine distant depuis l'exterieur mais on pourra passer par une autre comme passerelle...
+exemple:
+solution1:
+ssh jaguar
+ssh localhost -p 2222
+
+solution2:
+ssh -J macgonagall

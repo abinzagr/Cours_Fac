@@ -1,0 +1,6 @@
+21:19:58 **** Incremental Build of configuration Debug for project MyHello ****
+make all 
+make: rien à faire pour « all ».
+
+21:19:58 Build Finished (took 209ms)
+

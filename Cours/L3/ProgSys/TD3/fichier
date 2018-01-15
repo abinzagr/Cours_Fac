@@ -1,0 +1,13 @@
+total 56
+drwxr-xr-x 2 abbinzagr grp30001 4096 oct.  12 10:45 .
+drwxr-xr-x 5 abbinzagr grp30001 4096 oct.  12 08:26 ..
+-rwxr-xr-x 1 abbinzagr grp30001 7824 oct.  12 09:08 faux_pipe
+-rw-r--r-- 1 abbinzagr grp30001  607 oct.  12 09:19 faux-pipe.c
+-rw-r--r-- 1 abbinzagr grp30001    0 oct.  12 10:46 fichier
+-rw-r--r-- 1 abbinzagr grp30001   43 oct.  12 09:08 file.txt
+-rwxr-xr-x 1 abbinzagr grp30001 7920 oct.  12 10:45 log
+-rw-r--r-- 1 abbinzagr grp30001  495 oct.  12 10:45 log.c
+-rwxr-xr-x 1 abbinzagr grp30001 7456 oct.  12 10:09 taille_buffer
+-rw-r--r-- 1 abbinzagr grp30001  418 oct.  12 10:09 taille-buffer.c
+-rwxr-xr-x 1 abbinzagr grp30001 7648 oct.  12 09:34 vrai_pipe
+-rw-r--r-- 1 abbinzagr grp30001  460 oct.  12 09:34 vrai-pipe.c

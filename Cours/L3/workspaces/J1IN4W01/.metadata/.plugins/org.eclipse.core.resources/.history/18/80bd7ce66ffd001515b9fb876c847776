@@ -1,0 +1,40 @@
+import java.awt.Color;
+
+import ij.IJ;
+import ij.ImagePlus;
+import ij.gui.ColorChooser;
+import ij.gui.NewImage;
+import ij.plugin.filter.PlugInFilter;
+import ij.process.ImageProcessor;
+
+
+public class ImageAnaglyphe implements PlugInFilter {
+
+  public void run(ImageProcessor ip) {
+    int shift=5;
+    int w = ip.getWidth();
+    int h = ip.getHeight();
+      for (int y = 0; y < h; y++) {
+        for (int x = 0; x < w; x++) {
+
+         int couleur = ip.getPixel(x, y);
+          int r1 = (couleur & 0xFF0000) >> 16;
+          int g1 = (couleur & 0x00FF00) >> 8;
+          int b1 = (couleur & 0x0000FF);
+          int tmp=0;
+          ip.putPixel(x, y,((r1-shift) << 16) + ((g1+shift) << 8)
+              + (shift));
+        }
+
+      }
+
+    }
+
+        
+      
+  
+  
+  public int setup(String arg, ImagePlus imp) {
+    return DOES_RGB;
+  }  
+}

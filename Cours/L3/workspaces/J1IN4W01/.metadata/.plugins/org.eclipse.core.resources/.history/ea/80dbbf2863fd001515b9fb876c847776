@@ -1,0 +1,14 @@
+import ij.ImagePlus;
+import ij.plugin.filter.PlugInFilter;
+
+public class ImagePixelisé15_30 implements PlugInFilter {
+
+  
+  
+  
+  
+  
+  public int setup(String arg, ImagePlus imp) {
+    return DOES_RGB;
+  }  
+}

@@ -1,0 +1,13 @@
+
+public class Capteur {
+	String sender_class;
+	String sender_name;
+	
+	public Capteur(String sender_class, String sender_name) {
+		super();
+		this.sender_class = sender_class;
+		this.sender_name = sender_name;
+	}
+	
+	
+}

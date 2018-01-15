@@ -1,0 +1,12 @@
+
+public class VisualisateurAcc {
+	String receive_class;
+	String receive_name;
+	int receive_id;
+	
+	public VisualisateurAcc(String receive_class, String receive_name,int receive_id) {
+		this.receive_class = receive_class;
+		this.receive_name = receive_name;
+		this.receive_id = receive_id;
+	}
+}

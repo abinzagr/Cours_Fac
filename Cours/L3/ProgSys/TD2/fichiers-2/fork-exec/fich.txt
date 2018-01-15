@@ -1,0 +1,22 @@
+total 344
+-rw-r--r-- 1 abbinzagr grp30001  2296 sept. 29  2015 Affichage.c
+-rw-r--r-- 1 abbinzagr grp30001   113 sept. 29  2015 Affichage.h
+-rw-r--r-- 1 abbinzagr grp30001 10896 oct.   5 09:26 Affichage.o
+-rw-r--r-- 1 abbinzagr grp30001   738 sept. 29  2015 Analyse.l
+-rw-r--r-- 1 abbinzagr grp30001  2344 sept. 29  2015 Analyse.y
+-rw-r--r-- 1 abbinzagr grp30001  1155 oct.   5 10:47 Evaluation.c
+-rw-r--r-- 1 abbinzagr grp30001   113 sept. 29  2015 Evaluation.h
+-rw-r--r-- 1 abbinzagr grp30001  8632 oct.   5 10:47 Evaluation.o
+-rw-r--r-- 1 abbinzagr grp30001  1267 oct.   5 10:19 fichier.txt
+-rw-r--r-- 1 abbinzagr grp30001     0 oct.   5 10:47 fich.txt
+-rw-r--r-- 1 abbinzagr grp30001 46217 oct.   5 09:36 lex.yy.c
+-rw-r--r-- 1 abbinzagr grp30001 45624 oct.   5 09:36 lex.yy.o
+-rw-r--r-- 1 abbinzagr grp30001   537 sept. 29  2015 Makefile
+-rwxr-xr-x 1 abbinzagr grp30001 58384 oct.   5 10:47 Shell
+-rw-r--r-- 1 abbinzagr grp30001  6010 sept. 29  2015 Shell.c
+-rw-r--r-- 1 abbinzagr grp30001  1208 sept. 29  2015 Shell.h
+-rw-r--r-- 1 abbinzagr grp30001 20048 oct.   5 09:26 Shell.o
+-rw-r--r-- 1 abbinzagr grp30001 11358 oct.   5 09:36 y.output
+-rw-r--r-- 1 abbinzagr grp30001 48686 oct.   5 09:36 y.tab.c
+-rw-r--r-- 1 abbinzagr grp30001  2519 oct.   5 09:36 y.tab.h
+-rw-r--r-- 1 abbinzagr grp30001 18536 oct.   5 09:36 y.tab.o

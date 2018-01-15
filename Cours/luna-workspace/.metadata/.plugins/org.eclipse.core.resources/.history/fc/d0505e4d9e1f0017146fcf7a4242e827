@@ -1,0 +1,15 @@
+import javax.json.JsonObject;
+
+
+public class VisualisateurAcc {
+	int sender_id;
+	int msg_id;
+	JsonObject []tabmsgId;
+	
+	public VisualisateurAcc(int sender_id, int msg_id, JsonObject[] tabmsgId) {
+		this.sender_id = sender_id;
+		this.msg_id = msg_id;
+		this.tabmsgId = tabmsgId;
+	}
+	
+}

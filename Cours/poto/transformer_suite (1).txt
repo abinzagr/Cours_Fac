@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+static void usage(char* s)
+{
+    printf("Usage : %s (carre|cube) <liste d'entiers>\n", s);
+    exit (EXIT_FAILURE);
+}
+
+// _____FONCTIONS_____
+
+int carre(int k)
+{
+    return k*k;
+}
+
+int cube(int k)
+{
+    return k*k*k;
+}
+
+typedef int (*ptr_f)(int);
+
+typedef struct
+{
+    char* name;
+    ptr_f f;
+}Option;
+
+Option tabOption[] = {{"carre",carre},{"cube",cube}};
+
+ptr_f rechercherOption(char *nom_f)
+{
+    for (int i=0; i<2; i++)
+    if (strcmp(tabOption[i].name,nom_f)==0)
+        return tabOption[i].f;
+    return NULL;
+}
+
+void appliquer(ptr_f f, int *t, int* t1, int taille)
+{
+    for(int i=0; i<taille; i++)
+        t1[i]=f(t[i]);
+}
+
+void afficherTableau(int t[], int n, char * numerotableau)
+{
+    for (int i=0; i<n; i++)
+    {
+        printf("t%s[%d]: %d\n",numerotableau,i,t[i]);
+    }
+}
+
+// _____MAIN_____
+
+int
+main(int argc, char *argv[]){
+    if (argc <3)
+        usage(argv[0]);
+    
+    int taille= argc-2;
+    int t[taille];
+    for ( int i =0 ; i<taille ; i++)
+        t[i] = atoi(argv[i+2]);
+    afficherTableau(t, taille,"");
+    
+    ptr_f f = rechercherOption(argv[1]);
+    if (f == NULL)
+        usage(argv[0]);
+    int t1[taille];
+    appliquer(f, t, t1, taille);
+    afficherTableau(t1, taille,"1");
+    
+    return EXIT_SUCCESS;
+}

@@ -1,0 +1,11 @@
+package projet_imgs;
+
+import ij.*;
+import ij.process.ImageProcessor;
+import ij.process.LUT;
+
+public class PaletteStd {
+  public void run(ImageProcessor ip) {
+
+  }
+}

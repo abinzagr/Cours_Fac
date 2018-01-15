@@ -1,0 +1,56 @@
+10:40:36 **** Incremental Build of configuration Default for project correctionMake ****
+make all 
+make -C src
+make[1] : on entre dans le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src »
+for i in bcb sdd ; do \
+	make -C $i install ; \
+done
+make[2] : on entre dans le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/bcb »
+[ -d ../../lib ] || mkdir ../../lib
+for i in  chaine  memoire  ; do \
+	make -C $i ; \
+done
+make[3] : on entre dans le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/bcb/chaine »
+make -C ../memoire
+make[4] : on entre dans le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/bcb/memoire »
+make[4]: rien à faire pour « all ».
+make[4] : on quitte le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/bcb/memoire »
+make[3] : on quitte le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/bcb/chaine »
+make[3] : on entre dans le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/bcb/memoire »
+make[3]: rien à faire pour « all ».
+make[3] : on quitte le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/bcb/memoire »
+for i in  chaine  memoire  ; do \
+	ar -rs libbcb.a $i/$i.o ; \
+done
+cp libbcb.a ../../lib
+make[2] : on quitte le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/bcb »
+make[2] : on entre dans le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/sdd »
+[ -d ../../lib ] || mkdir ../../lib
+for i in  file  vext  paire  ; do \
+	make -C $i ; \
+done
+make[3] : on entre dans le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/sdd/file »
+make -C ../paire
+make[4] : on entre dans le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/sdd/paire »
+make[4]: rien à faire pour « all ».
+make[4] : on quitte le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/sdd/paire »
+make[3] : on quitte le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/sdd/file »
+make[3] : on entre dans le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/sdd/vext »
+make[3]: rien à faire pour « all ».
+make[3] : on quitte le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/sdd/vext »
+make[3] : on entre dans le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/sdd/paire »
+make[3]: rien à faire pour « all ».
+make[3] : on quitte le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/sdd/paire »
+for i in  file  vext  paire  ; do \
+	ar -rs libsdd.a $i/$i.o ; \
+done
+cp libsdd.a ../../lib
+make[2] : on quitte le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/sdd »
+make -C magasin
+make[2] : on entre dans le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/magasin »
+make[2]: rien à faire pour « all ».
+make[2] : on quitte le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src/magasin »
+make[1] : on quitte le répertoire « /autofs/netapp/account/cremi/abbinzagr/edd/src/correction_make/src »
+
+10:40:36 Build Finished (took 162ms)
+

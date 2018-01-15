@@ -1,0 +1,50 @@
+import java.awt.Color;
+
+import ij.IJ;
+import ij.ImagePlus;
+import ij.gui.ColorChooser;
+import ij.gui.GenericDialog;
+import ij.gui.NewImage;
+import ij.plugin.filter.PlugInFilter;
+import ij.process.ImageProcessor;
+
+
+public class ImageAnaglyphe implements PlugInFilter {
+ 
+  public void run(ImageProcessor ip) {
+    GenericDialog gd = new GenericDialog( "la valeur du décalage shift ",
+        IJ.getInstance() );
+    gd.addSlider( "shift", 0.0, 10.0, 2.0 );
+    gd.showDialog() ;
+    if ( gd.wasCanceled() ) {
+      IJ.error( "PlugIn cancelled" );
+      return;
+    }
+    int shift = (int) gd.getNextNumber();//on recupere la valeur du facteur
+    if (shift == 0)
+      return ;
+    int w = ip.getWidth();
+    int h = ip.getHeight();
+      for (int y = 0; y < h; y++) {
+        for (int x = 0; x < w; x++) {
+
+         int couleur = ip.getPixel(x, y);
+          int r1 = (couleur & 0xFF0000) >> 16;
+          int g1 = (couleur & 0x00FF00) >> 8;
+          int b1 = (couleur & 0x0000FF);//non utilisé
+          ip.putPixel(x, y,((r1-shift) << 16) + ((g1+shift) << 8)
+              + (shift));
+        }
+
+      }
+
+    }
+
+        
+      
+  
+  
+  public int setup(String arg, ImagePlus imp) {
+    return DOES_RGB;
+  }  
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="td_0.Point"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.PUBLIC_MEMBER"/>
+<fullyQualifiedTypeName name="javax.management.RuntimeErrorException"/>
+<fullyQualifiedTypeName name="Rectangle"/>
+<fullyQualifiedTypeName name="java.io.ObjectInputStream.GetField"/>
+<fullyQualifiedTypeName name="Point2D"/>
+<fullyQualifiedTypeName name="Pt2DC"/>
+<fullyQualifiedTypeName name="PolygonePt2DC"/>
+<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+<fullyQualifiedTypeName name="ij.process.ImageProcessor"/>
+<fullyQualifiedTypeName name="ij.ImagePlus"/>
+<fullyQualifiedTypeName name="ij.process.LUT"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="ij.gui.NewImage"/>
+<fullyQualifiedTypeName name="ij.plugin.filter.PlugInFilter"/>
+</qualifiedTypeNameHistroy>

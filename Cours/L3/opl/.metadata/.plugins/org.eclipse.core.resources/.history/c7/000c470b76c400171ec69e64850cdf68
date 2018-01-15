@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+	<version>1.0</version>
+	<configs>
+		<config category="opl" default="true" name="Configuration 1">
+			<ref name="opl.mod" type="model">
+			</ref>
+		</config>
+		<config category="opl" default="false" name="Configuration 2">
+			<ref name="modele1.mod" type="model">
+			</ref>
+			<ref name="data1.dat" type="data">
+			</ref>
+		</config>
+		<config category="opl" default="false" name="tableaux">
+			<ref name="modtableaux.mod" type="model">
+			</ref>
+			<ref name="datatableaux.dat" type="data">
+			</ref>
+		</config>
+		<config category="opl" default="false" name="pate">
+			<ref name="modpate.mod" type="model">
+			</ref>
+			<ref name="datapate.dat" type="data">
+			</ref>
+		</config>
+	</configs>
+	
+</project>

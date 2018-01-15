@@ -1,0 +1,24 @@
+/*********************************************
+ * OPL 12.6.3.0 Model
+ * Author: abbinzagr
+ * Creation Date: 6 déc. 2017 at 11:17:57
+ *********************************************/
+int x1=...;
+int x2=...;
+int x3=...;
+int x4=...;
+int profit[1..4]=...;
+int mult1=0; //apha
+int mult2=0; //U
+int profitmult[1..4]=...; //profit après application des multiplicateur de langrange
+int w1[1..4]=...; //dimension 1
+int w2[1..4]=...; //dimension 2
+int w3[1..4]=...; //dimension 3
+maximize
+  	sum(i in 1..4)(5*x1+4*x2+3*x3+2*x4) ;
+  	subject to{
+  				6*x1+4*x2+5*x3+1*x4 <= 10;
+  				//2*x1+3*x2+3*x3+3*x4 <= 10; contrainte relachée !
+  				//1*x1+5*x2+5*x3+1*x4 <= 01; contrainte relachée !
+  	  	
+  	}

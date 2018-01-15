@@ -1,0 +1,58 @@
+#!/usr/bin/python3
+# coding: utf-8
+
+import socket,select,threading
+
+list_client[]
+def broadcast_to_client(sock) :
+	for socket in list_client and socket !=sock:
+		data=sock.recv(1024)
+		if not data: 
+			sock.close()
+			break
+		sock.send(data)
+
+server_socket = socket.socket(socket.AF_INET6,socket.SOCK_STREAM)
+server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+server_socket.bind (('', 7777)) 
+server_socket.listen(1)
+list_client.append(server_socket)
+while 1:
+    try:
+        # On recupère la liste des sockets dans lesquelles on peut lire dans read_sockets
+        # écrire dans write_sockets...
+        read_sockets, write_sockets, error_sockets = select.select(list_client, [], [])
+ 
+        for sock in read_sockets:
+            # Si on peut lire dans celle du serveur c'est une nouvelle connexion
+            if sock == server_socket:
+                # On l'accepte et on ajoute la connexion à list_client
+                sockfd, addr = server_socket.accept()
+                list_client.append(sockfd)
+                print("Client (" + addr[0] + ", " + str(addr[1]) + ") connected")
+                # On envoie le message à tous les clients
+                broadcastToClients(sockfd, "[" + addr[0] + ":" + str(addr[1]) + "] entered room\n")
+ 
+            # Sinon c'est qu'un message à été reçu d'un client.
+            else:
+                try:
+                    data = sock.recv(RECV_BUFFER).decode('UTF-8')
+                    if data:
+                        # Le message est envoyer à tous les clients.
+                        # Le premiere paramètre est la socket dans laquelle le message a été reçu
+                        #    pour ne pas lui retourner
+                        broadcastToClients(sock, '<' + str(sock.getpeername()) + '> ' + data + '\n')
+ 
+                except:
+                    #La ligne suivante est utile pour savoir quelle erreur a été émise
+                    # print("Unexpected error: " + sys.exc_info()[0])
+                    broadcastToClients(sock, "Client [" + addr[0] + ":" + str(addr[1]) + "] is offline")
+                    print("Client [" + addr[0] + ":" + str(addr[1]) + "] is offline")
+                    sock.close()
+                    list_client.remove(sock)
+                    continue
+    except KeyboardInterrupt:
+        print("Stop.\n")
+        break
+ 
+server_socket.close()

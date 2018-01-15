@@ -1,0 +1,48 @@
+EX01: interface reseau et Adresse IP
+
+eth0 :
+
+IPv4 : 10.0.208.13/24
+IPv6 : 2001:660:6101:800:208::13/80
+MTU : 1500
+
+lo :
+
+IPv4: 127.0.0.1/8
+IPv6: 1/128
+MTU: 655536
+
+lo: designe l'hote local(localhost)
+MTU: désigne la taille maximale entre une machine source et une machine destination
+
+Ex02: Protocole ARP
+/usr/sbin/arp : table arp (option -n les @ plutot que les noms des machines)
+
+Ex03: Resolution de noms(DNS)
+
+host(ou nslookup) www.google.fr
+
+Ex04: Configuration d'un reseau local
+
+Adresse reseau: 192.168.0.0
+masque reseau: 255.255.255.0
+plage d'@ IP : 192.168.0.1 -> 192.168.0.254
+
+immortal: 192.168.0.1
+opeth: 192.168.0.10
+grave:192.168.0.20
+syl:192.168.0.30
+
+
+echo 0 > /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts accepte un ping broadcast
+
+config après reboot:
+ 
+iface lo inet loopback
+
+iface eth0 inet static
+        address 192.168.90.1
+        netmask 255.255.255.0
+        network 192.168.90.0
+        broadcast 192.168.90.255
+        gateway 192.168.90.1

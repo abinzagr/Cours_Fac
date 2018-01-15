@@ -1,0 +1,106 @@
+
+import java.awt.Color;
+import java.io.File;
+
+import javax.swing.JFileChooser;
+
+import ij.IJ;
+import ij.ImagePlus;
+import ij.Prefs;
+import ij.gui.NewImage;
+import ij.io.OpenDialog;
+import ij.io.Opener;
+import ij.plugin.PlugIn;
+import ij.process.ImageProcessor;
+
+
+public class Detection_Mouvement implements PlugIn {
+  
+  ImagePlus im1;
+  ImagePlus im2;
+
+  public void openFiles()
+  {
+    JFileChooser fc = new JFileChooser();
+    fc.setMultiSelectionEnabled(true);
+
+    File dir = null;
+    String sdir = OpenDialog.getDefaultDirectory();
+    if (sdir!=null) dir = new File(sdir);
+    if (dir!=null) fc.setCurrentDirectory(dir);
+    int returnVal = fc.showOpenDialog(IJ.getInstance());
+    if (returnVal!=JFileChooser.APPROVE_OPTION)
+      return;
+
+    File[] files = fc.getSelectedFiles();
+    if ( files.length != 2 ) return;
+    String folderPath = fc.getCurrentDirectory().getPath()+Prefs.getFileSeparator();
+    dir = fc.getCurrentDirectory();
+
+    Opener opener = new Opener();
+    im1 = opener.openImage(folderPath, files[0].getName());
+    im2 = opener.openImage(folderPath, files[1].getName());
+  }
+  
+  public void differenceInterImages( ImagePlus im1, ImagePlus im2, ImagePlus imR, ImagePlus imV, ImagePlus imB )
+  { ImageProcessor ip1=im1.getProcessor();
+    ImageProcessor ip2=im1.getProcessor();
+    ImageProcessor ipR=imR.getProcessor();
+    ImageProcessor ipV=imV.getProcessor();
+    ImageProcessor ipB=imB.getProcessor();
+    int width = ip1.getWidth();
+    int height = ip1.getHeight();
+    int couleur1=0;
+    int couleur2=0;
+    for (int y = 0; y < height; y++) {
+      for (int x = 0; x < width; x++) {
+        
+        couleur1 = ip1.getPixel(x, y);
+        int r1 = (couleur1 & 0xFF0000) >> 16;
+        int g1 = (couleur1 & 0x00FF00) >> 8;
+        int b1 = (couleur1 & 0x0000FF);
+        
+        couleur2= ip1.getPixel(x, y);
+        int r2 = (couleur2 & 0xFF0000) >> 16;
+        int g2 = (couleur2 & 0x00FF00) >> 8;
+        int b2 = (couleur2 & 0x0000FF);
+        
+        int r=Math.abs(r1-r2);
+        int v=Math.abs(g1-g2);
+        int b=Math.abs(b1-b2);
+        ipR.putPixel(x, y, r);
+        ipV.putPixel(x, y, v);
+        ipB.putPixel(x, y, b);
+      }
+      
+      
+    }
+  }
+  
+  
+  
+  public void erodeEtDilateImage( ImagePlus im )
+  {
+    ...
+  }
+  
+  public void fusion( ImagePlus imR, ImagePlus imV, ImagePlus imB, ImagePlus imRes )
+  {
+    ...
+  }
+  
+  public void seuillage(ImagePlus im, int minValue)
+  {
+    ...
+  }
+
+  @Override
+  public void run(String arg0) {
+    openFiles();
+    
+    if ( im1 == null || im2 == null ) return;
+    
+    ...
+  }
+
+}

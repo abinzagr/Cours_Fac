@@ -1,0 +1,8 @@
+
+public interface Capteur {
+	
+	public int registerSender(String senderClass, String senderName)
+	{
+	return 0;
+	}
+}

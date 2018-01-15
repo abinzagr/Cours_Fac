@@ -1,0 +1,25 @@
+public class Viewer {
+	private int sender_id;
+	private int msg_id;
+
+	public Viewer(int sender_id, int msg_id) {
+		this.sender_id = sender_id;
+		this.msg_id = msg_id;
+	}
+
+	public int getSender_id() {
+		return sender_id;
+	}
+
+	public void setSender_id(int sender_id) {
+		this.sender_id = sender_id;
+	}
+
+	public int getMsg_id() {
+		return msg_id;
+	}
+
+	public void setMsg_id(int msg_id) {
+		this.msg_id = msg_id;
+	}
+}
